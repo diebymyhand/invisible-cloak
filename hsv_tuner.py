@@ -18,7 +18,6 @@ while True:
     _, frame = cap.read()
     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
 
-    # Зчитуємо поточні значення повзунків
     l_h = cv.getTrackbarPos("L - H", "Trackbars")
     l_s = cv.getTrackbarPos("L - S", "Trackbars")
     l_v = cv.getTrackbarPos("L - V", "Trackbars")
@@ -29,7 +28,6 @@ while True:
     lower = np.array([l_h, l_s, l_v])
     upper = np.array([u_h, u_s, u_v])
 
-    # Створюємо маску
     mask = cv.inRange(hsv, lower, upper)
     result = cv.bitwise_and(frame, frame, mask=mask)
 
