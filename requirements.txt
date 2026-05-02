@@ -1,0 +1,5 @@
+numpy
+opencv-python-headless
+pytest
+pytest-html
+flake8
